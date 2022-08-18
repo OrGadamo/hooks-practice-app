@@ -1,43 +1,46 @@
 import { useState } from "react";
 const UserTable = () => {
-  const usersArray = [
-    {
-      fName: "Or1",
-      lName: "Gadamo",
-      age: "23",
-      email: "Or@gmail.com",
-      password: "yaBish",
-    },
-    {
-      fName: "Or2",
-      lName: "Gadamo",
-      age: "23",
-      email: "Or@gmail.com",
-      password: "yaBish",
-    },
-    {
-      fName: "Or3",
-      lName: "Gadamo",
-      age: "23",
-      email: "Or@gmail.com",
-      password: "yaBish",
-    },
-    {
-      fName: "Or4",
-      lName: "Gadamo",
-      age: "23",
-      email: "Or@gmail.com",
-      password: "yaBish",
-    },
-    {
-      fName: "Or5",
-      lName: "Gadamo",
-      age: "23",
-      email: "Or@gmail.com",
-      password: "yaBish",
-    },
-  ];
-  let [users, setUsers] = useState(usersArray);
+  let [users, setUsers] = useState([]);
+  const loadUsersToTable = () => {
+    const usersArray = [
+      {
+        fName: "Or1",
+        lName: "Gadamo",
+        age: "23",
+        email: "Or@gmail.com",
+        password: "yaBish",
+      },
+      {
+        fName: "Or2",
+        lName: "Gadamo",
+        age: "23",
+        email: "Or@gmail.com",
+        password: "yaBish",
+      },
+      {
+        fName: "Or3",
+        lName: "Gadamo",
+        age: "23",
+        email: "Or@gmail.com",
+        password: "yaBish",
+      },
+      {
+        fName: "Or4",
+        lName: "Gadamo",
+        age: "23",
+        email: "Or@gmail.com",
+        password: "yaBish",
+      },
+      {
+        fName: "Or5",
+        lName: "Gadamo",
+        age: "23",
+        email: "Or@gmail.com",
+        password: "yaBish",
+      },
+    ];
+    setUsers(usersArray);
+  };
   const printTable = () => {
     return (
       <table>
@@ -129,6 +132,11 @@ const UserTable = () => {
     setUsers(users);
     alert("user deleted successfully");
   };
-  return <div>{printTable()}</div>;
+  return (
+    <div>
+      <button onClick={loadUsersToTable}>Load Users</button>
+      {printTable()}
+    </div>
+  );
 };
 export default UserTable;
